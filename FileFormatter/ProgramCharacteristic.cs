@@ -55,7 +55,7 @@ public class ProgramCharacteristic
         for (var i = 0; i < _analyzers.Length; i++)
         {
             var row = startRow + i;
-            sheet.Cells[row, 1].Value = i;
+            sheet.Cells[row, 1].Value = i + 1;
 
             var file = _analyzers[i];
             sheet.Cells[row, 2].Value = file.Name;
