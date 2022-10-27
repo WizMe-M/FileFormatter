@@ -3,7 +3,7 @@
 public class Project
 {
     private readonly IEnumerable<string> _ignoreDirs = new[] { "bin", "obj", "Migrations" };
-    private readonly IEnumerable<string> _includeExtensions = new[] { ".cs", ".axaml", ".axaml.cs", ".csproj" };
+    private readonly IEnumerable<string> _includeExtensions = new[] { ".cs", ".axaml", ".axaml.cs" };
     private readonly DirectoryInfo _projectDir;
 
     public Project(string path)
