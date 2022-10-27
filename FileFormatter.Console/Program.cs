@@ -14,3 +14,5 @@ foreach (var proj in projects)
     var programCharacteristic = proj.GetCharacteristic();
     programCharacteristic.Save();
 }
+Console.WriteLine($"Файлы сохранены по пути: {Settings.ResultPath}");
+Console.ReadKey();
