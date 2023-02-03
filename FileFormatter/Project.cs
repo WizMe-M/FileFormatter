@@ -17,7 +17,7 @@ public class Project
         return ProgramCharacteristic.FromFiles(_projectDir.Name, files);
     }
 
-    public IEnumerable<FileInfo> ScanDirectories() => GetChildFiles(_projectDir);
+    private IEnumerable<FileInfo> ScanDirectories() => GetChildFiles(_projectDir);
 
     /// <summary>
     /// Recursively enumerates files with ignore and include settings
@@ -33,7 +33,7 @@ public class Project
 
         foreach (var subDirectory in directory.EnumerateDirectories())
         {
-            foreach (var file in GetChildFiles(subDirectory)) 
+            foreach (var file in GetChildFiles(subDirectory))
                 yield return file;
         }
     }

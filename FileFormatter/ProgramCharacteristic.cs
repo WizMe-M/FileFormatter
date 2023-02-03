@@ -24,6 +24,20 @@ public class ProgramCharacteristic
         var bytes = GenerateExcel();
         Directory.CreateDirectory(Settings.ResultPath);
         File.WriteAllBytes(_filePath, bytes);
+
+        SaveCode();
+    }
+
+    private void SaveCode()
+    {
+        var path = Path.Combine(Settings.ResultPath, "all_code.txt");
+        using var textWriter = new StreamWriter(path, true);
+        foreach (var fileAnalyzer in _analyzers)
+        {
+            textWriter.WriteLine($"{fileAnalyzer.Name}:");
+            textWriter.WriteLine(fileAnalyzer.GetCode());
+            textWriter.WriteLine();
+        }
     }
 
     private byte[] GenerateExcel()
